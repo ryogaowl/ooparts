@@ -18,6 +18,7 @@ module.exports = {
       },
       backgroundImage: {
         mv: "url('/images/mv.jpg')",
+        mv2: "url('/images/mv2.jpg')",
         contact: "url('/images/bg2.jpg')",
       },
     },
