@@ -8,7 +8,6 @@ import works from "public/images/works.png";
 import works2 from "public/images/works2.png";
 import works3 from "public/images/works3.png";
 import Layout from "./components/Layout";
-import { Fade } from "react-reveal";
 import Link from "next/link";
 
 export default function Home() {
@@ -30,12 +29,12 @@ export default function Home() {
             <div className="lg:hidden block mt-10">
               <Image src={pic} alt="LOGO" className="block w-420 h-72" />
             </div>
-            <p className="lg:pt-8 pt-12">
+            <p className="lg:pt-8 pt-12 lg:leading-5 leading-7">
               OOPARTS
               DESIGNは、創造性と論理性を融合させたウェブデザインを提供する会社です。
               <br />
               Think creative and
-              logicalyをモットーに、常に新しいアイデアとテクノロジーを取り入れながら、
+              logicallyをモットーに、常に新しいアイデアとテクノロジーを取り入れながら、
               <br className="lg:block hidden" />
               お客様のビジネスやブランドの成長を支援しています。
               <br />
@@ -60,15 +59,7 @@ export default function Home() {
             href="#"
             class="w-fit text-white hover:text-gray-900 font-medium transition duration-300 ease-in-out border hover:border-gray-900 border-white rounded-full py-2 px-4 flex items-center"
           >
-            More
-            <svg
-              class="inline-block
- ml-1 w-4 h-4 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-            >
-              <path d="M6.175 13.567l1.292-1.293 3.175 3.175 3.175-3.175 1.292 1.293-4.467 4.467-4.467-4.467z" />
-            </svg>
+            View More →
           </a>
         </div>
       </section>
@@ -145,10 +136,10 @@ export default function Home() {
           </div>
           <div class="mt-14 pb-8 flex justify-center">
             <Link
-              href="/"
-              className="block  w-fit text-black hover:text-gray-900 font-medium transition duration-300 ease-in-out border hover:border-gray-900 border-black rounded-full py-2 px-4  items-center "
+              href="#"
+              class="w-fit text-black hover:text-gray-900 font-medium transition duration-300 ease-in-out border hover:border-gray-900 border-black rounded-full py-2 px-4 flex items-center"
             >
-              More &gt;
+              View More →
             </Link>
           </div>
         </div>
@@ -213,7 +204,7 @@ export default function Home() {
                 href="/"
                 className="block  w-fit text-black hover:text-gray-900 font-medium transition duration-300 ease-in-out border hover:border-gray-900 border-black rounded-full py-2 px-4  items-center "
               >
-                More &gt;
+                View More →
               </Link>
             </div>
           </div>

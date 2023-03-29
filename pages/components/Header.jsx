@@ -47,7 +47,7 @@ function Header() {
           <button
             onClick={handleMenuOpen}
             type="button"
-            className="absolute right-5 top-6 z-50 space-y-2"
+            className="md:hidden block absolute right-5 top-6 z-50 space-y-2"
           >
             <div
               className={
