@@ -18,9 +18,10 @@ export default function Home() {
   React.useEffect(() => {
     // 追加
     AOS.init({
-      offset: 300,
+      offset: 120,
       duration: 500,
-      delay: 300,
+      delay: 200,
+      once: true,
     });
   }, []);
   return (
@@ -94,12 +95,12 @@ export default function Home() {
 
       <section className="bg-white">
         <div className="mx-auto px-4 container pt-16">
-          <h1 className=" text-5xl font-bold" data-aos="fade-left">
+          <h1 className=" text-5xl font-bold" data-aos="fade-up">
             Service
           </h1>
 
           <div className="lg:flex justify-between mt-12">
-            <div className="lg:w-1/4" data-aos="fade-left">
+            <div className="lg:w-1/4" data-aos="fade-right">
               <h2 className="text-xl text-center font-bold">
                 ホームページ制作
               </h2>
@@ -141,7 +142,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="lg:w-1/4" data-aos="fade-left">
+            <div className="lg:w-1/4" data-aos="fade-right">
               <h2 className="lg:pt-0 pt-10 text-xl text-center font-bold">
                 CMS導入
               </h2>
@@ -243,8 +244,8 @@ export default function Home() {
         </div>
       </section>
       {/* Newsセクション */}
-      <section className="w-screen bg-contact">
-        <div data-aos="fade-up">
+      <section className="w-screen bg-contact" data-aos="fade-up">
+        <div>
           <h3 className="text-center text-4xl pt-11 text-white font-bold">
             無料相談はこちら！！
           </h3>
