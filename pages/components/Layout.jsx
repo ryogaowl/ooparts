@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 export const appName = "Sample App";
 
 function Layout({ children }) {
@@ -9,7 +8,7 @@ function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="font-body">{children}</main>
+      <main>{children}</main>
     </div>
   );
 }

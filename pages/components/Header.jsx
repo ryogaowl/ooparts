@@ -8,6 +8,13 @@ function Header() {
   const handleMenuOpen = () => {
     setOpenMenu(!openMenu);
   };
+  if (process.browser) {
+    if (openMenu) {
+      document.body.classList.add("active");
+    } else {
+      document.body.classList.remove("active");
+    }
+  }
   return (
     <>
       <header className="z-40 fixed top-0 w-full bg-black !important text-white ">
@@ -47,7 +54,7 @@ function Header() {
           <button
             onClick={handleMenuOpen}
             type="button"
-            className="md:hidden block absolute right-5 top-6 z-50 space-y-2"
+            className="lg:hidden block absolute right-5 top-6 z-50 space-y-2"
           >
             <div
               className={
@@ -69,35 +76,53 @@ function Header() {
       </header>
       <div
         className={
-          openMenu
-            ? "h-screen w-screen bg-black overflow-hidden fixed z-30"
-            : undefined
+          openMenu ? "h-screen w-screen bg-black  fixed z-30" : undefined
         }
       >
         <nav className={openMenu ? "block" : "hidden"}>
           <ul className="text-center text-white">
             <li className="mt-52 text-3xl font-bold">
-              <Link href="/about" className="hover:text-gray-300">
+              <Link
+                onClick={handleMenuOpen}
+                href="/about"
+                className="hover:text-gray-300"
+              >
                 About
               </Link>
             </li>
             <li className="mt-14 text-3xl font-bold">
-              <Link href="/service" className="hover:text-gray-300">
+              <Link
+                onClick={handleMenuOpen}
+                href="/service"
+                className="hover:text-gray-300"
+              >
                 Service
               </Link>
             </li>
             <li className="mt-14 text-3xl font-bold">
-              <Link href="/works" className="hover:text-gray-300">
+              <Link
+                onClick={handleMenuOpen}
+                href="/works"
+                className="hover:text-gray-300"
+              >
                 Works
               </Link>
             </li>
             <li className="mt-14 text-3xl font-bold">
-              <Link href="/news" className="hover:text-gray-300">
+              <Link
+                onClick={handleMenuOpen}
+                href="/news"
+                className="hover:text-gray-300"
+              >
                 News
               </Link>
             </li>
             <li className="mt-14 text-3xl font-bold">
-              <Link href="/contact" className="hover:text-gray-300">
+              <Link
+                onClick={handleMenuOpen}
+                href="/contact"
+                className="hover:text-gray-300"
+              >
                 Contact
               </Link>
             </li>

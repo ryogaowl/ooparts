@@ -6,6 +6,11 @@
 html {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  background-color: black;
+}
+
+body.active {
+  overflow: hidden;
 }
 
 nav a {
