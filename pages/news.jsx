@@ -1,22 +1,19 @@
 import Link from "next/link";
 import { client } from "../libs/client";
-import { Pagination } from "./components/Pagination";
 
 export async function getStaticProps() {
   const data = await client.get({
     endpoint: "news",
-    queries: { offset: 0, limit: 5 },
   });
   console.log(data);
   return {
     props: {
       news: data.contents,
-      totalCount: data.totalCount,
     },
   };
 }
 
-export default function News({ news, totalCount }) {
+export default function News({ news }) {
   return (
     <div>
       <section>
@@ -56,7 +53,6 @@ export default function News({ news, totalCount }) {
                 </div>
               ))}
             </div>
-            <Pagination totalCount={totalCount} />
           </div>
         </div>
       </section>
