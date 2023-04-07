@@ -2,7 +2,7 @@ import Link from "next/link";
 import { client } from "../libs/client";
 import { Pagination } from "./components/Pagination";
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   const data = await client.get({
     endpoint: "news",
     queries: { offset: 0, limit: 5 },
@@ -14,7 +14,8 @@ export const getStaticProps = async () => {
       totalCount: data.totalCount,
     },
   };
-};
+}
+
 export default function News({ news, totalCount }) {
   return (
     <div>

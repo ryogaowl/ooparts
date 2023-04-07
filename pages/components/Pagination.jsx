@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const Pagination = ({ totalCount }) => {
+function Pagination({ totalCount }) {
   const PER_PAGE = 5;
 
   const range = (start, end) =>
@@ -15,4 +15,5 @@ export const Pagination = ({ totalCount }) => {
       ))}
     </ul>
   );
-};
+}
+export default Pagination;
