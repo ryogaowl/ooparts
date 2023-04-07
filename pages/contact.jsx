@@ -106,16 +106,6 @@ export default function Contact() {
                 </button>
               </div>
             </form>
-            {status === "success" && (
-              <p className="text-green-500 mt-5 text-center">
-                Your message has been sent! We'll get back to you shortly.
-              </p>
-            )}
-            {status === "error" && (
-              <p className="text-red-500 mt-5 text-center">
-                There was an error sending your message. Please try again later.
-              </p>
-            )}
           </div>
         </div>
       </div>
