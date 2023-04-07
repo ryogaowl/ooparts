@@ -2,7 +2,7 @@ import React from "react";
 import hp from "public/images/code.jpg";
 import ec from "public/images/service-ec.jpg";
 import Image from "next/image";
-function service() {
+export default function service() {
   return (
     <div>
       <section>
@@ -92,5 +92,3 @@ function service() {
     </div>
   );
 }
-
-export default service;
