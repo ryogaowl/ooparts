@@ -77,18 +77,22 @@ export default function Home() {
               くします。
             </p>
           </div>
-          <div className="lg:block hidden">
-            <Image src={pic} alt="LOGO" className="block w-420 h-72" />
+          <div className="">
+            <Image
+              src={pic}
+              alt="LOGO"
+              className="lg:block hidden w-420 h-72 "
+            />
           </div>
         </div>
 
         <div className="mt-14 pb-8 flex justify-center" data-aos="zoom-in-up">
-          <a
-            href="#"
+          <Link
+            href="/about"
             class="w-fit text-white hover:text-gray-900 font-medium transition duration-300 ease-in-out border hover:border-gray-900 border-white rounded-full py-2 px-4 flex items-center"
           >
             View More →
-          </a>
+          </Link>
         </div>
       </section>
       {/* Aboutセクション */}
@@ -112,7 +116,7 @@ export default function Home() {
                 />
               </div>
               <div className="flex justify-center mt-3">
-                <p>
+                <p className="text-center">
                   お客様の情報や要望をヒアリング
                   <br />
                   させていただき、それをもとにデ
@@ -133,12 +137,14 @@ export default function Home() {
                 />
               </div>
               <div className="flex justify-center mt-3">
-                <p>
-                  お客様の情報や要望をヒアリング
+                <p className="text-center">
+                  Shopifyの既存テーマを使用した
                   <br />
-                  させていただき、それをもとにデ
+                  ECサイトを制作いたします。
                   <br />
-                  ザインを１から作成いたします。
+                  テンプレートのみではなくカスタ
+                  <br />
+                  マイズも対応可能です。
                 </p>
               </div>
             </div>
@@ -154,19 +160,23 @@ export default function Home() {
                 />
               </div>
               <div className="flex justify-center mt-3">
-                <p>
-                  お客様の情報や要望をヒアリング
+                <p className="text-center">
+                  ブログやコーポレートサイト運用
                   <br />
-                  させていただき、それをもとにデ
+                  をお客様で簡単に行えるCMSを導
                   <br />
-                  ザインを１から作成いたします。
+                  入したサイトを制作いたします。
+                  <br />
+                  Wordpressはもちろん、
+                  <br />
+                  Jamstackでの構築も可能です。
                 </p>
               </div>
             </div>
           </div>
           <div class="mt-14 pb-8 flex justify-center" data-aos="zoom-in-up">
             <Link
-              href="#"
+              href="/"
               class="w-fit text-black hover:text-gray-900 font-medium transition duration-300 ease-in-out border hover:border-gray-900 border-black rounded-full py-2 px-4 flex items-center"
             >
               View More →

@@ -21,6 +21,9 @@ module.exports = {
         mv2: "url('/images/mv2.jpg')",
         contact: "url('/images/bg2.jpg')",
       },
+      backgroundColor: {
+        table: "#EEEEEE",
+      },
     },
   },
   plugins: [],
