@@ -1,12 +1,19 @@
 .container {
   color: white;
   font-size: large;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
-.container img {
+
+.works_container {
+  color: white;
+  font-size: large;
+  line-height: 2rem;
+}
+.works_container img {
   width: 700px;
   display: block;
   margin: auto;
   margin-top: 5rem;
+  padding-bottom: 5rem;
 }
 /*# sourceMappingURL=Home.module.css.map */
