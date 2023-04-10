@@ -36,7 +36,7 @@ function Header() {
               </Link>
             </div>
             <div className="mx-4 border-b-2 border-transparent hover:border-gray-300">
-              <Link href="/works" className="hover:text-gray-300">
+              <Link href="/#works" className="hover:text-gray-300">
                 Works
               </Link>
             </div>
@@ -102,7 +102,7 @@ function Header() {
             <li className="mt-14 text-3xl font-bold">
               <Link
                 onClick={handleMenuOpen}
-                href="/works"
+                href="/#works"
                 className="hover:text-gray-300"
               >
                 Works
