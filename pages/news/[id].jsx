@@ -28,7 +28,7 @@ export async function getStaticPaths() {
 }
 
 export default function NewsId({ news, convertDate }) {
-  const publishedAt = dayjs(convertDate).format("YYYY年MM月DD日");
+  const publishedAt = dayjs(convertDate).format("YYYY.MM.DD");
   return (
     <div className="min-h-screen">
       <section>
