@@ -5,7 +5,7 @@ export async function getStaticProps() {
   const data = await client.get({
     endpoint: "news",
   });
-  console.log(data);
+
   return {
     props: {
       news: data.contents,

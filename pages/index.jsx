@@ -4,7 +4,7 @@ import pic from "public/images/about.jpg";
 import hp from "public/images/hp.png";
 import ec from "public/images/ec.png";
 import cms from "public/images/cms.png";
-import works from "public/images/works.png";
+import works1 from "public/images/works.png";
 import works2 from "public/images/works2.png";
 import works3 from "public/images/works3.png";
 import Layout from "./components/Layout";
@@ -13,8 +13,35 @@ import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React from "react";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+import { client } from "../libs/client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Navigation, Pagination } from "swiper";
+import "swiper/css/navigation"; // スタイルをインポート
+import "swiper/css/pagination";
 
-export default function Home() {
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+export async function getStaticProps() {
+  const data = await client.get({
+    endpoint: "news",
+  });
+  const worksData = await client.get({
+    endpoint: "works",
+  });
+
+  return {
+    props: {
+      news: data.contents,
+      works: worksData.contents,
+    },
+  };
+}
+export default function Home({ news, works, convertDate }) {
   React.useEffect(() => {
     // 追加
     AOS.init({
@@ -24,6 +51,7 @@ export default function Home() {
       once: true,
     });
   }, []);
+  const publishedAt = dayjs(convertDate).format("YYYY.MM.DD");
   return (
     <Layout>
       <section className="lg:bg-cover  lg:bg-mv bg-mv2  h-screen w-screen">
@@ -48,7 +76,6 @@ export default function Home() {
             <h1 className="pt-10  text-5xl font-bold" data-aos="fade-up">
               About
             </h1>
-
             <div className="lg:hidden block mt-10 ">
               <Image
                 src={pic}
@@ -57,8 +84,9 @@ export default function Home() {
                 data-aos="fade-up"
               />
             </div>
+
             <p
-              className="lg:pt-8 pt-12 lg:leading-5 leading-7"
+              className="lg:pt-7 pt-7 lg:leading-5 leading-7"
               data-aos="fade-up"
             >
               OOPARTS
@@ -176,7 +204,7 @@ export default function Home() {
           </div>
           <div class="mt-14 pb-8 flex justify-center" data-aos="zoom-in-up">
             <Link
-              href="/"
+              href="/service"
               class="w-fit text-black hover:text-gray-900 font-medium transition duration-300 ease-in-out border hover:border-gray-900 border-black rounded-full py-2 px-4 flex items-center"
             >
               View More →
@@ -193,58 +221,29 @@ export default function Home() {
           >
             <h1 className="pt-10  text-5xl font-bold">News</h1>
             <div className="mt-10">
-              <div className="border-b border-black">
-                <div className="py-2 px-1 mx-auto flex">
-                  <div className="flex justify-center items-center bg-black">
-                    <time className="text-white text-sm px-6 py1">
-                      2023.3.11
-                    </time>
+              {news.map((news) => (
+                <div className="border-b border-black" key={news.id}>
+                  <div className="py-2 px-1 mx-auto flex">
+                    <div className="flex justify-center items-center bg-black">
+                      <time
+                        className="text-white text-sm px-6 py1 "
+                        dateTime={convertDate}
+                      >
+                        {publishedAt}
+                      </time>
+                    </div>
+                    <p className="ml-7 lg:text-base text-sm">
+                      <Link href={`news/${news.id}`} className="">
+                        {news.title}
+                      </Link>
+                    </p>
                   </div>
-                  <p className="ml-7 lg:text-base text-sm">
-                    ホームページを制作しました！！
-                  </p>
                 </div>
-              </div>
-              <div className="border-b border-black">
-                <div className="py-2 px-1 mx-auto flex">
-                  <div className="flex justify-center items-center bg-black">
-                    <time className="text-white text-sm px-6 py1">
-                      2023.3.11
-                    </time>
-                  </div>
-                  <p className="ml-7 lg:text-base text-sm">
-                    ホームページを制作しました！！
-                  </p>
-                </div>
-              </div>
-              <div className="border-b border-black">
-                <div className="py-2 px-1 mx-auto flex">
-                  <div className="flex justify-center items-center bg-black">
-                    <time className="text-white text-sm px-6 py1">
-                      2023.3.11
-                    </time>
-                  </div>
-                  <p className="ml-7 lg:text-base text-sm">
-                    ホームページを制作しました！！
-                  </p>
-                </div>
-              </div>
-              <div className="border-b border-black">
-                <div className="py-2 px-1 mx-auto flex">
-                  <div className="flex justify-center items-center bg-black">
-                    <time className="text-white text-sm px-6 py1">
-                      2023.3.11
-                    </time>
-                  </div>
-                  <p className="ml-7 lg:text-base text-sm">
-                    ホームページを制作しました！！
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
             <div class="mt-10 pb-8 flex justify-center">
               <Link
-                href="/"
+                href="/news"
                 className="block  w-fit text-black hover:text-gray-900 font-medium transition duration-300 ease-in-out border hover:border-gray-900 border-black rounded-full py-2 px-4  items-center "
               >
                 View More →
@@ -260,53 +259,47 @@ export default function Home() {
             無料相談はこちら！！
           </h3>
           <div className="mt-14 pb-8 flex justify-center">
-            <a
-              href="#"
+            <Link
+              href="/contact"
               class="text-white hover:text-gray-900 font-medium transition duration-300 ease-in-out border hover:border-gray-900 border-white rounded-full py-2 px-7 flex items-center"
             >
               お問い合わせ
-            </a>
+            </Link>
           </div>
         </div>
       </section>
       {/* Contactセクション */}
-      <section className="bg-white">
-        <div className="mx-auto px-4 container pt-16 pb-36">
+
+      <section className="bg-white" id="works">
+        <div className="mx-auto px-4 container pt-16 pb-20">
           <h1 className=" text-5xl font-bold" data-aos="fade-up">
             Works
           </h1>
-          <div className=" mt-10 lg:flex justify-between">
-            <div className="relative hover:cursor-pointer ">
-              <Image
-                src={works}
-                alt="制作実績"
-                className="block w-full mt-7 lg:w-80 h-full lg:h-52"
-              />
-              <div className="absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-90 bg-black transition ease-in-out duration-300 flex items-center justify-center">
-                <p className="text-white text-center">詳細を見る</p>
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+            className="
+            mt-10
+            [&_.swiper-pagination]:relative
+            [&_.swiper-pagination]:mt-5
+            [&_.swiper-pagination-bullet-active]:!bg-black
+            [&_.swiper-pagination-bullet]:h-[11px]
+            [&_.swiper-pagination-bullet]:w-[11px]
+            [&_.swiper-pagination-bullet]:bg-[#888]
+            lg:w-10/12 w-full
+            "
+          >
+            {works.map((work) => (
+              <div key={work}>
+                <SwiperSlide>
+                  <Link href={`works/${work.id}`}>
+                    <img src={work.thumbnail.url} alt="" />
+                  </Link>
+                </SwiperSlide>
               </div>
-            </div>
-            <div className="relative hover:cursor-pointer">
-              <Image
-                src={works2}
-                alt="制作実績"
-                className="block mt-7 w-full lg:w-80 h-full lg:h-52"
-              />
-              <div className="absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-90 bg-black transition ease-in-out duration-300 flex items-center justify-center">
-                <p className="text-white text-center">詳細を見る</p>
-              </div>
-            </div>
-            <div className="relative hover:cursor-pointer">
-              <Image
-                src={works3}
-                alt="制作実績"
-                className="block mt-7 w-full lg:w-80 h-full lg:h-52"
-              />
-              <div className="absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-90 bg-black transition ease-in-out duration-300 flex items-center justify-center">
-                <p className="text-white text-center">詳細を見る</p>
-              </div>
-            </div>
-          </div>
+            ))}
+          </Swiper>
         </div>
       </section>
     </Layout>

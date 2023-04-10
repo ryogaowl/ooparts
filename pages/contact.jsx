@@ -25,22 +25,37 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-20">
+    <div className="pt-16">
       <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
         <Head>
           <title>Contact Page</title>
         </Head>
-        <div className="relative py-3 sm:max-w-xl sm:mx-auto">
+        <div className="relative pb-3 pt-1 sm:max-w-xl sm:mx-auto">
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-light-blue-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
           <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
             <h1 className="text-2xl md:text-3xl font-semibold text-center mb-5">
               Contact Us
             </h1>
             <form onSubmit={handleSubmit}>
-              <div className="mb-4">
+              <p className="mt-2  text-center text-gray-700 text-sm">
+                興味をお持ちいただきありがとうございます。
+                <br />
+                気軽に下記フォーム、
+                <span>
+                  <a
+                    href="https://lin.ee/PrOvfkX"
+                    target={"_blank"}
+                    className="text-green-500 font-bold border-b border-green-500"
+                  >
+                    公式LINE
+                  </a>
+                </span>
+                からお問い合わせください。
+              </p>
+              <div className="mb-4 ">
                 <label
                   htmlFor="company"
-                  className="block text-sm md:text-base font-medium text-gray-700"
+                  className="block mt-6 text-sm md:text-base font-medium text-gray-700"
                 >
                   御社名
                 </label>
