@@ -32,8 +32,9 @@ export default function service() {
                 ホームページ制作
               </h2>
               <p className="lg:mt-10 mt-5 lg:leading-8 leading-normal flex justify-center">
-                お客様のホームページをお客様で簡単に更新できるCMSを導入いたします。
-                Wordpressはもちろん、Jamstackという最新の技術を使用した高速なサイトの構築も可能です。
+                OOPARTS
+                DESIGNでは、お客様のニーズに合わせた最適なホームページ制作をご提案します。
+                お客様の情報や要望をヒアリングさせていただき、それをもとにデザインを１から作成いたします。
               </p>
             </div>
           </div>
@@ -64,9 +65,8 @@ export default function service() {
                 CMS導入
               </h2>
               <p className="lg:mt-10 mt-5 leading-normal lg:leading-8 flex justify-center">
-                OOPARTS
-                DESIGNでは、お客様のニーズに合わせた最適なホームページ制作をご提案します。
-                お客様の情報や要望をヒアリングさせていただき、それをもとにデザインを１から作成いたします。
+                お客様のホームページをお客様で簡単に更新できるCMSを導入いたします。
+                Wordpressはもちろん、Jamstackという最新の技術を使用したページ遷移が高速なサイトの構築も可能です。
                 <br />
               </p>
             </div>
