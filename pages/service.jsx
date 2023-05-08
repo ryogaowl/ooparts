@@ -1,6 +1,8 @@
 import React from "react";
 import hp from "public/images/code.jpg";
 import ec from "public/images/service-ec.jpg";
+import cms from "public/images/cms-2.jpg";
+
 import Image from "next/image";
 
 export default function service() {
@@ -23,16 +25,15 @@ export default function service() {
             <Image
               src={hp}
               alt="ホームページ制作"
-              className="block   lg:w-6/12 w-full h-72"
+              className="block   lg:w-6/12 w-full md:h-96 h-64"
             />
             <div className=" lg:w-6/12 w-full pr-0 lg:pr-5">
               <h2 className="lg:text-center text-left mt-5  text-2xl font-bold">
                 ホームページ制作
               </h2>
               <p className="lg:mt-10 mt-5 lg:leading-8 leading-normal flex justify-center">
-                OOPARTS
-                DESIGNでは、お客様のニーズに合わせた最適なホームページ制作をご提案します。
-                お客様の情報や要望をヒアリングさせていただき、それをもとにデザインを１から作成いたします。
+                お客様のホームページをお客様で簡単に更新できるCMSを導入いたします。
+                Wordpressはもちろん、Jamstackという最新の技術を使用した高速なサイトの構築も可能です。
               </p>
             </div>
           </div>
@@ -40,29 +41,27 @@ export default function service() {
             <Image
               src={ec}
               alt="ECサイト制作"
-              className="block w-full  lg:w-6/12 h-72"
+              className="block w-full  lg:w-6/12 md:h-96 h-64"
             />
             <div className="lg:w-6/12 w-full pl-0 lg:pl-5">
               <h2 className="lg:text-center text-left mt-5 text-2xl font-bold">
                 ECサイト制作
               </h2>
               <p className="lg:mt-10 mt-5 lg:leading-8 leading-normal flex justify-center">
-                OOPARTS
-                DESIGNでは、お客様のニーズに合わせた最適なホームページ制作をご提案します。
-                お客様の情報や要望をヒアリングさせていただき、それをもとにデザインを１から作成いたします。
+                ただきれいなデザインなだけではなく、お客様の強みや特性を活かした売れるデザインを心がけて制作いたします。
                 <br />
               </p>
             </div>
           </div>
           <div className="lg:flex block justify-between  mt-20 flex-row-reverse">
             <Image
-              src={hp}
-              alt="ホームページ制作"
-              className="block  w-full lg:w-6/12 h-72"
+              src={cms}
+              alt="CMS導入"
+              className="block  w-full lg:w-6/12 md:h-96 h-64"
             />
             <div className="w-full lg:w-6/12 pr-0 lg:pr-5">
               <h2 className="lg:text-center text-left mt-5 text-2xl font-bold">
-                ホームページ制作
+                CMS導入
               </h2>
               <p className="lg:mt-10 mt-5 leading-normal lg:leading-8 flex justify-center">
                 OOPARTS

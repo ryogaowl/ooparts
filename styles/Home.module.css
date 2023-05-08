@@ -3,6 +3,13 @@
   font-size: large;
   line-height: 2rem;
 }
+.container img {
+  width: 450px;
+  display: block;
+  margin: auto;
+  margin-top: 60px;
+  padding-bottom: 5rem;
+}
 
 .works_container {
   color: white;
@@ -13,7 +20,7 @@
   width: 700px;
   display: block;
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 60px;
   padding-bottom: 5rem;
 }
 /*# sourceMappingURL=Home.module.css.map */
